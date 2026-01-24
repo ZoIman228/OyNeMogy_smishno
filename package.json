@@ -1,0 +1,20 @@
+{
+  "name": "jokesgit",
+  "version": "1.0.0",
+  "description": "jokes from Ai",
+  "homepage": "https://github.com/RoboUmanAdm/OyNeMogy_smishno#readme",
+  "bugs": {
+    "url": "https://github.com/RoboUmanAdm/OyNeMogy_smishno/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoboUmanAdm/OyNeMogy_smishno.git"
+  },
+  "license": "ISC",
+  "author": "kuchma",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
