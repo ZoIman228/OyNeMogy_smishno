@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
     if(req.url.startsWith('/dislike')){
         dislike(req, res)
     }
-    if(req.url.startsWith('/reset')){
+    if(req.url.ячс('/reset')){
         reset(req, res)
     }
 });
