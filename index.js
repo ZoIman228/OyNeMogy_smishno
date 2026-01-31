@@ -16,6 +16,9 @@ const server = http.createServer((req, res) => {
     if(req.url.startsWith('/dislike')){
         dislike(req, res)
     }
+    if(req.url.startsWith('/reset')){
+        reset(req, res)
+    }
 });
 server.listen(3000)
 function getAllJokes(req, res) {
@@ -71,6 +74,21 @@ function dislike(req, res){
         let jokeJSON = Buffer.from(file).toString()
         let joke = JSON.parse(jokeJSON)
         joke.dislikes ++;
+        fs.writeFileSync(filePath, JSON.stringify(joke))
+    }
+    res.end()
+}
+function reset(req, res){
+    const url = require('url');
+    const params = url.parse(req.url, true).query;
+    let id = params.id;
+    if(id){
+        let filePath = path.join(dataDir, id+ '.json')
+        let file = fs.readFileSync(filePath)
+        let jokeJSON = Buffer.from(file).toString()
+        let joke = JSON.parse(jokeJSON)
+        joke.dislikes = 0;
+        joke.likes = 0;
         fs.writeFileSync(filePath, JSON.stringify(joke))
     }
     res.end()
